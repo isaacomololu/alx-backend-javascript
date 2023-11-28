@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default function getFullResponseFromAPI(success) {
-    return new Promise((resolve, reject) => {
+    const value = new Promise((resolve, reject) => {
         if (success) {
             resolve(
                 {
@@ -8,9 +8,8 @@ export default function getFullResponseFromAPI(success) {
                     body: 'Success'
                 }
             )
-        } else {
-            reject('Error: The fake API is not working currently');
-        }
+        } 
+        reject('Error: The fake API is not working currently');
     });
-    
+    return value
 }
